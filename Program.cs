@@ -1,6 +1,6 @@
 ﻿using Inventory_Management_System;
 
-List<Product> productList = new List<Product>();
+List<Inventory> productList = new List<Inventory>();
 Console.WriteLine("*** Inventory Managements System***\n");
 
 while (true)
@@ -23,7 +23,8 @@ while (true)
 			double productPricePU = Convert.ToDouble(Console.ReadLine());
 
 			var product = new Product(productID, productName, productQty, productPricePU);
-			productList.Add(product);
+			var pList = new Inventory(product);
+			productList.Add(pList);
 			Console.WriteLine("New Product Added\n");
 			Console.WriteLine($"Product ID: {productID}\nProduct Name: {productName}\nQty: {productQty}\nPrice: {productPricePU}\n");
 			Console.WriteLine("\nEnd");
