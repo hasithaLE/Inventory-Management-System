@@ -12,7 +12,6 @@ while (true)
 	switch (input)
 	{
 		case 1:
-			Console.WriteLine("Case 1");
 			Console.Write("Enter Product ID: ");
 			string productID = Console.ReadLine();
 			Console.Write("Enter Product Name: ");
@@ -30,28 +29,26 @@ while (true)
 			Console.WriteLine("\nEnd");
 			break;
 		case 2:
-			Console.WriteLine("Case 2");
 			Console.Write("Enter Product ID you want to delete: ");
 			string deleteID = Console.ReadLine();
 			foreach (var item in productList.ToList())
 			{
-				if (item.productID == deleteID)
+				if (item.Product.productID == deleteID)
 				{
-					productList.Remove(item);
-					Console.WriteLine("\nProduct Deleted");
+					//productList.Remove(item);
+					//Console.WriteLine("\nProduct Deleted");
+					Console.WriteLine($"P ID is : {item.Product.productID} P Name is : {item.Product.productName}");
 				}
 			}
-			Console.WriteLine("\nEnd");
 			break;
 		case 3:
-			Console.WriteLine("Case 3");
 			Console.Write("Enter Product ID you want to Update: ");
 			string updateID = Console.ReadLine();
 			foreach (var item in productList.ToList())
 			{
-				if (item.productID == updateID)
+				if (item.Product.productID == updateID)
 				{
-					Console.WriteLine($"Product ID: {item.productID}\nProduct Name: {item.productName}\nQty: {item.productQty}\nPrice: {item.pricePerUnit}\n");
+					Console.WriteLine($"Product ID: {item.Product.productID}\nProduct Name: {item.Product.productName}\nQty: {item.Product.productQty}\nPrice: {item.Product.pricePerUnit}\n");
 					Console.WriteLine("1-Update quantity\n2-Update Price");
 					Console.Write("what you want update? ");
 					string whatUpdate = Console.ReadLine();
@@ -59,14 +56,14 @@ while (true)
 					{
 						Console.Write("Enter New Quntity: ");
 						int newQuantity = Convert.ToInt32(Console.ReadLine());
-						item.productQty = newQuantity;
+						item.Product.productQty = newQuantity;
 						Console.WriteLine("\nProduct Quantity Updated");
 					}
 					else if (whatUpdate == "2")
 					{
 						Console.Write("Enter New Price: ");
 						double newPrice = Convert.ToDouble(Console.ReadLine());
-						item.pricePerUnit = newPrice;
+						item.Product.pricePerUnit = newPrice;
 						Console.WriteLine("\nProduct Price Updated");
 					}
 				}
@@ -74,12 +71,10 @@ while (true)
 			Console.WriteLine("\nEnd");
 			break;
 		case 4:
-			Console.WriteLine("Case 4");
 			foreach (var item in productList)
 			{
-				Console.WriteLine($"Product ID: {item.productID}\nProduct Name: {item.productName}\nQty: {item.productQty}\nPrice: {item.pricePerUnit}\n");
+				Console.WriteLine($"Product ID: {item.Product.productID}\nProduct Name: {item.Product.productName}\nQty: {item.Product.productQty}\nPrice: {item.Product.pricePerUnit}\n");
 			}
-			Console.WriteLine("\nEnd");
 			break;
 		default:
 			Console.WriteLine("Default Case");

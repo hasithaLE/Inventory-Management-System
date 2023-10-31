@@ -13,5 +13,9 @@ namespace Inventory_Management_System
 		{
 			this.Product = product;
 		}
+		public static void addProduct(Inventory inventory)
+		{
+			//productList.Add(pList);
+		}
 	}
 }
